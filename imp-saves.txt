@@ -1,0 +1,169 @@
+working script of airport shuttel ! 
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const bookingForm = document.getElementById("bookingForm");
+
+  if (!bookingForm) {
+    alert("⚠️ bookingForm not found!");
+    return;
+  }
+
+  bookingForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let formSubmitted = false;
+
+    try {
+      const data = {
+        names: [
+          document.getElementById("name1").value,
+          document.getElementById("name2").value,
+          document.getElementById("name3").value,
+          document.getElementById("name4").value,
+          document.getElementById("name5").value,
+        ],
+        phones: [
+          `${document.getElementById("code1").value} ${document.getElementById("phone1").value}`,
+          `${document.getElementById("code2").value} ${document.getElementById("phone2").value}`,
+          `${document.getElementById("code3").value} ${document.getElementById("phone3").value}`,
+          `${document.getElementById("code4").value} ${document.getElementById("phone4").value}`,
+          `${document.getElementById("code5").value} ${document.getElementById("phone5").value}`,
+        ],
+        pickupDate: document.getElementById("pickupDate").value,
+        pickupLocation: document.getElementById("pickupLocation").value,
+        boardingTime: document.getElementById("boardingTime").value,
+        terminal: document.getElementById("dropTerminal").value,
+        serviceType:
+          document.querySelector('input[name="serviceType"]:checked')?.value ||
+          "Not selected",
+      };
+
+      localStorage.setItem("bookingDetails", JSON.stringify(data));
+      formSubmitted = true;
+
+      window.location.href = "your-ticket.html";
+    } catch (err) {
+      alert("❌ Error: " + err.message);
+    }
+
+    // ⏱️ Fallback alert if nothing happens within 3 seconds
+    setTimeout(() => {
+      if (!formSubmitted) {
+        alert("❌ Something went wrong. Please contact our support team!");
+      }
+    }, 3000);
+  });
+});
+</script>
+
+
+your ticket -- 
+
+
+
+<script>
+async function generatePDF() {
+    const element = document.getElementById('ticket');
+    const canvas = await html2canvas(element, {
+        scale: 3,
+        useCORS: true,
+        scrollY: 0
+    });
+
+    const imgData = canvas.toDataURL('image/jpeg', 1.0);
+    const { jsPDF } = window.jspdf; // 👈 Access jsPDF from global variable
+    const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'px',
+        format: [canvas.width, canvas.height]
+    });
+
+    pdf.addImage(imgData, 'JPEG', 0, 0, canvas.width, canvas.height);
+    pdf.save('GoToGo-Ticket.pdf');
+}
+</script>
+
+<!-- form data to ticket  -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const data = JSON.parse(localStorage.getItem("bookingDetails"));
+  if (!data) return;
+
+  // Highlight Boarding Time
+  document.querySelectorAll(".boarding-box").forEach(box => {
+    if (box.getAttribute("data-time") === data.boardingTime) {
+      box.classList.add("highlight");
+    }
+  });
+
+  // Highlight Drop Terminal
+  document.querySelectorAll(".terminal-box").forEach(box => {
+    if (box.getAttribute("data-terminal") === data.terminal) {
+      box.classList.add("highlight");
+    }
+  });
+
+  // Fill NAME (first non-empty name)
+  document.getElementById("passengerName").innerText = data.names.find(n => n.trim() !== "") || "N/A";
+
+  // Format date: Month Day, Year
+  const formattedDate = new Date(data.pickupDate).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+  document.getElementById("pickupDate").innerText = formattedDate;
+
+  // Only first two words of pickup location
+  const shortLocation = data.pickupLocation.split(" ").slice(0, 2).join(" ");
+  document.getElementById("pickupLocation").innerText = shortLocation;
+  document.getElementById("pickupAddress").innerText = shortLocation;
+
+  // Generate ticket number
+  const ticketNo = "G2G-AS-SH-" + Math.floor(100 + Math.random() * 900);
+  document.querySelector('[style*="TICKET #"] + div').innerText = ticketNo;
+});
+
+</script>
+
+<!-- local storage clear  -->
+<script>
+  const EXPIRY_KEY = 'localStorageExpiry';
+  const EXPIRY_TIME = 4 * 60 * 60 * 1000; // 4 hours in milliseconds
+
+  // Set expiry if not already set
+  if (!localStorage.getItem(EXPIRY_KEY)) {
+    localStorage.setItem(EXPIRY_KEY, Date.now() + EXPIRY_TIME);
+  } else {
+    const expiry = parseInt(localStorage.getItem(EXPIRY_KEY));
+    if (Date.now() > expiry) {
+      localStorage.clear();
+      localStorage.setItem(EXPIRY_KEY, Date.now() + EXPIRY_TIME); // Reset expiry if needed
+    }
+  }
+</script>
+
+<!-- generate ticket number  -->
+<script>
+  function generateTicketNumber() {
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = now.getMinutes();
+
+    const period = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12 || 12;
+    const hourStr = hours.toString().padStart(2, '0');
+    const minuteStr = minutes.toString().padStart(2, '0');
+
+    const timePart = `${hourStr}${minuteStr}`;
+    const random = Math.floor(100 + Math.random() * 900);
+
+    return `G2G-${period}-${timePart}-${random}`;
+  }
+
+  // 🔥 Run after DOM is ready
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector('.ticket-number').textContent = generateTicketNumber();
+  });
+</script>

@@ -1,0 +1,42 @@
+function generatePDF() {
+  const element = document.getElementById('ticket');
+  const downloadButton = document.querySelector('.download-btn'); // Get reference to the button
+
+  // Show loader and disable button
+  downloadButton.classList.add('loading');
+  downloadButton.setAttribute('disabled', 'true'); // Also disable the button
+
+  html2pdf()
+    .set({
+      margin: 0,
+      filename: 'GoToGo-Ticket.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: {
+  unit: 'px',
+  format: [375, 667], // <-- This is the problematic part
+  orientation: 'portrait'
+}
+    })
+    .from(element)
+    
+    .save()
+    .then(() => {
+      // PDF generation and download is complete
+      // Hide loader and re-enable button
+      downloadButton.classList.remove('loading');
+      downloadButton.removeAttribute('disabled');
+      // Optional: Add a success message here
+      // alert('Ticket downloaded successfully!');
+    })
+    .catch(error => {
+      // Handle any errors during PDF generation
+      console.error('Error generating PDF:', error);
+      // Hide loader and re-enable button even if there's an error
+      downloadButton.classList.remove('loading');
+      downloadButton.removeAttribute('disabled');
+      // Optional: Show an error message to the user
+      // alert('Failed to download ticket. Please try again.');
+    });
+}
+  
