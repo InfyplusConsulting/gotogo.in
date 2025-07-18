@@ -6,7 +6,7 @@
     <title>GoToGo - Luxury Car Rental | Airport Transfers | Local Travel</title>
     <link
       rel="shortcut icon"
-      href="assets/GoToGo Final Logos/GoToGo Final Logos/G2G Fleet - Inverse Black.png"
+      href="assets/gotogo final logos/GoToGo Final Logos/G2G Fleet.png"
       type="image/x-icon"
     />
     <link
@@ -125,6 +125,10 @@
     @media (max-width: 480px) {
       .circle-group {
         gap: 15px;
+      }
+
+      .gap2-5 {
+        gap: 2.5rem !important;
       }
 
       .feature-pair {
@@ -300,11 +304,11 @@
             <li class="nav-item">
               <a class="nav-link" href="#services">Services</a>
             </li>
-            <!-- <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="airport-shuttle.html"
                 >Airport Shuttle</a
               >
-            </li> -->
+            </li>
             <li class="nav-item">
               <a class="btn btn-subscribe" href="#contact">Contact us</a>
             </li>
@@ -503,7 +507,7 @@
           </div>
         </div>
 
-        <div class="feature-pair d-flex justify-content-center gap-4">
+        <div class="feature-pair gap2-5 d-flex justify-content-center ">
           <div class="feature-circle text-center">
             <img
               src="assets/transparancy.jpg"
@@ -577,7 +581,7 @@
           <li>Car Rental for Local Usage</li>
           <li>Car Rental for Outstation Usage</li>
 
-          <li>Car Hire for Event / Conference / Marriage /Party</li>
+          <li>Car Hire for Event / Conference / Marriage / Party</li>
 
           <li>Bus Rental for Local / Outstation Usage</li>
 
@@ -692,110 +696,86 @@
     <!-- Our Other Services Section -->
     <!-- Our Other Services Section -->
     <!-- Our Other Services Section -->
-    <div
-      style="
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 50px 20px;
-        text-align: center;
-      "
-    >
-      <h2
-        style="
-          font-size: 32px;
-          font-weight: bold;
-          color: #333;
-          margin-bottom: 40px;
-        "
-      >
-        Our Brands
-      </h2>
+<div id="services-wrapper" class="brand-wrapper">
+  <!-- Service 1 -->
+  <a href="#" target="_blank" class="brand-card">
+    <img src="assets/G2G Fleet.png" alt="Service 1" class="brand-img" />
+    <p class="brand-text">For Local Rides within Delhi NCR and nearby areas.</p>
+  </a>
 
-      <div
-        id="services-wrapper"
-        style="
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-          gap: 20px;
-        "
-      >
-        <!-- Service 1 -->
-        <a
-          href="#"
-          target="_blank"
-          style="
-            display: block;
-            width: calc(33.33% - 20px);
-            text-decoration: none;
-            transition: transform 0.3s;
-          "
-        >
-          <img
-            src="assets/G2G Fleet.png"
-            alt="Service 1"
-            style="
-              width: 100%;
-              height: auto;
-              max-height: 150px;
-              object-fit: contain;
-              transition: 0.3s;
-            "
-          />
-          <p style="color: #000">For Local Hire</p>
-        </a>
+  <!-- Service 2 -->
+  <a href="https://shuttletoagra.com/" target="_blank" class="brand-card">
+    <img src="assets/G2G Shuttle.png" alt="Service 2" class="brand-img" />
+    <p class="brand-text">Day Trips - From Delhi NCR to Agra</p>
+  </a>
 
-        <!-- Service 2 -->
-        <a
-          href="https://shuttletoagra.com/"
-          target="_blank"
-          style="
-            display: block;
-            width: calc(33.33% - 20px);
-            text-decoration: none;
-            transition: transform 0.3s;
-          "
-        >
-          <img
-            src="assets/G2G Shuttle.png"
-            alt="Service 2"
-            style="
-              width: 100%;
-              height: auto;
-              max-height: 150px;
-              object-fit: contain;
-              transition: 0.3s;
-            "
-          />
-          <p style="color: #000">For Shuttle To Agra</p>
-        </a>
+  <!-- Service 3 -->
+  <a href="https://roomsnvenues.com/" target="_blank" class="brand-card">
+    <img src="assets/G2G RoomsnVenues.png" alt="Service 3" class="brand-img" />
+    <p class="brand-text">For Venues & Hotel Bookings</p>
+  </a>
+</div>
 
-        <!-- Service 3 -->
-        <a
-          href="https://roomsnvenues.com/"
-          target="_blank"
-          style="
-            display: block;
-            width: calc(33.33% - 20px);
-            text-decoration: none;
-            transition: transform 0.3s;
-          "
-        >
-          <img
-            src="assets/G2G RoomsnVenues.png"
-            alt="Service 3"
-            style="
-              width: 100%;
-              height: auto;
-              max-height: 150px;
-              object-fit: contain;
-              transition: 0.3s;
-            "
-          />
-          <p style="color: #000">For Venues & Hotel</p>
-        </a>
-      </div>
-    </div>
+<!-- style for logos  -->
+<style>
+  .brand-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .brand-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(33.33% - 20px);
+    text-decoration: none;
+    transition: transform 0.3s;
+    color: #000;
+    padding: 10px;
+    border-radius: 12px;
+    background: #f9f9f9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .brand-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .brand-img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+    margin-bottom: 12px;
+  }
+
+  .brand-text {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* 📱 Mobile View */
+  @media (max-width: 768px) {
+    .brand-card {
+      width: 100%;
+    }
+
+    .brand-img {
+      max-height: 120px;
+    }
+
+    .brand-text {
+      font-size: 15px;
+    }
+  }
+</style>
+
+
 
     <!-- Our Other Services Section -->
     <!-- footer <nav></nav> -->
@@ -822,7 +802,7 @@
                 style="color: #f4be30; font-size: 18px"
               ></i>
               <a
-                href="mailto:care@gotogo.in"
+                href="mailto:care@gotogotravelsolutions.com"
                 style="
                   text-decoration: none;
                   color: #fff;
@@ -830,7 +810,7 @@
                   transition: 0.3s;
                 "
               >
-                care@gotogo.in
+                care@gotogotravelsolutions.com
               </a>
             </div>
 
@@ -1021,6 +1001,8 @@
             padding: 20px;
           }
 
+          
+
           .footer-links {
             flex-wrap: wrap;
             justify-content: center;
@@ -1057,6 +1039,9 @@
             justify-content: center;
             gap: 10px;
           }
+          .gap2-5{
+            gap: 2.5rem !important;
+          }
 
           .footer-link {
             font-size: 12px;
@@ -1085,6 +1070,57 @@
         }
       </style>
     </nav>
+    <!-- Toast container -->
+<div id="toast-container" style="
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: sans-serif;
+"></div>
+
+<script>
+  function showToast(message, type = "info") {
+    const toast = document.createElement("div");
+    toast.innerText = message;
+    toast.style.padding = "10px 16px";
+    toast.style.borderRadius = "6px";
+    toast.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
+    toast.style.color = "white";
+    toast.style.backgroundColor = type === "success" ? "#4caf50" : "#2196f3";
+    toast.style.fontSize = "14px";
+    toast.style.opacity = "0.95";
+
+    document.getElementById("toast-container").appendChild(toast);
+
+    // Remove after 5 sec
+    setTimeout(() => {
+      toast.remove();
+    }, 5000);
+  }
+
+  async function wakeUpServer() {
+    showToast("🕒 Server is waking up...");
+
+    try {
+      const response = await fetch("https://paymentgatewayforgotogo.onrender.com/ping");
+      if (response.ok) {
+        showToast("✅ Server is awake and will stay active for 15 minutes", "success");
+      } else {
+        showToast("⚠️ Ping failed: Server may still be waking up.");
+      }
+    } catch (error) {
+      showToast("❌ Server ping error: " + error.message);
+    }
+  }
+
+  // Call this on page load
+  window.addEventListener("DOMContentLoaded", wakeUpServer);
+</script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
