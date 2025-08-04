@@ -368,6 +368,17 @@
   }
 }
    </style>
+   <style>
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+</style>
   <div class="d-flex flex-column flex-md-row align-items-start mb-2">
     <input
       type="text"
@@ -387,8 +398,10 @@
       <option>+44</option>
     </select>
     <input
-      type="text"
+      type="number"
       class="form-control w-md-full"
+      maxlength="10"
+      oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10)"
       id="phone1"
       placeholder="Phone number"
       style="max-width: 200px"
@@ -404,7 +417,7 @@
       <option>+1</option>
       <option>+44</option>
     </select>
-    <input type="text" class="form-control w-md-full" id="phone2" placeholder="Phone number" style="max-width: 200px" />
+    <input type="number" class="form-control w-md-full" id="phone2" maxlength="10" oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10)" placeholder="Phone number" style="max-width: 200px" />
     </div>
   </div>
 
@@ -417,7 +430,7 @@
       <option>+1</option>
       <option>+44</option>
     </select>
-    <input type="text" class="form-control w-md-full" id="phone3" placeholder="Phone number" style="max-width: 200px" />
+    <input type="number" class="form-control w-md-full" id="phone3" maxlength="10" oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10)" placeholder="Phone number" style="max-width: 200px" />
     </div>
   </div>
 
@@ -429,7 +442,7 @@
       <option>+1</option>
       <option>+44</option>
     </select>
-    <input type="text" class="form-control w-md-full" id="phone4" placeholder="Phone number" style="max-width: 200px" />
+    <input type="number" class="form-control w-md-full" id="phone4" maxlength="10" oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10)" placeholder="Phone number" style="max-width: 200px" />
     </div>
   </div>
 
@@ -441,7 +454,7 @@
       <option>+1</option>
       <option>+44</option>
     </select>
-    <input type="text" class="form-control w-md-full" id="phone5" placeholder="Phone number" style="max-width: 200px" />
+    <input type="number" class="form-control w-md-full" id="phone5" maxlength="10" oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10)" placeholder="Phone number" style="max-width: 200px" />
     </div>
   </div>
   <input
