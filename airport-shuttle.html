@@ -355,134 +355,127 @@
       <div class="highlight-bar">Fill in the form to avail this service</div>
       <form class="row py-5" id="bookingForm">
         <div class="col-md-6">
-          <div class="row">
+          <div class="row " style="justify-content: center;">
             <!-- Passenger Name & Contact -->
-            <div class="col-6 contact-info">
-              <label class="form-label fw-bold">PASSENGER DETAILS</label>
-              <input
-                type="text"
-                class="form-control mb-2"
-                id="name1"
-                placeholder="Enter your full name"
-              />
-              <input
-                type="text"
-                class="form-control mb-2"
-                id="name2"
-                placeholder="Enter your full name"
-              />
-              <input
-                type="text"
-                class="form-control mb-2"
-                id="name3"
-                placeholder="Enter your full name"
-              />
-              <input
-                type="text"
-                class="form-control mb-2"
-                id="name4"
-                placeholder="Enter your full name"
-              />
-              <input
-                type="text"
-                class="form-control mb-2"
-                id="name5"
-                placeholder="Enter your full name"
-              />
-            </div>
+            <div class="row">
+  <label class="form-label fw-bold mb-3">PASSENGER DETAILS</label>
 
-            <div class="col-6 contact-info">
-              <label class="form-label fw-bold">PASSENGER CONTACT NUMBER</label>
+  <!-- Repeat this block for each passenger -->
+   <style>
+    @media (max-width: 768px) {
+  .w-md-full {
+    Max-width: 100% !important;
+  }
+}
+   </style>
+   <style>
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
-              <!-- Repeatable contact rows -->
-              <div class="d-flex mb-2">
-                <select
-                  class="form-select me-2 country-code-select"
-                  id="code1"
-                  style="max-width: 180px"
-                >
-                  <option selected>+91</option>
-                </select>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="phone1"
-                  placeholder="Phone number"
-                />
-              </div>
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+</style>
+  <div class="d-flex flex-column flex-md-row align-items-start mb-2">
+    <input
+      type="text"
+      class="form-control me-2 w-100 w-md-full"
+      id="name1"
+      placeholder="Passenger Name"
+      style="max-width: 220px"
+    />
+    <div class="d-flex">
+    <select
+      class="form-select me-2 country-code-select"
+      id="code1"
+      style="max-width: 120px"
+    >
+      <option selected>+91</option>
+      <option>+1</option>
+      <option>+44</option>
+    </select>
+    <input
+      type="number"
+      class="form-control w-md-full"
+      maxlength="10"
+      oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10)"
+      id="phone1"
+      placeholder="Phone number"
+      style="max-width: 200px"
+    />
+    </div>
+  </div>
 
-              <div class="d-flex mb-2">
-                <select
-                  class="form-select me-2 country-code-select"
-                  id="code2"
-                  style="max-width: 180px"
-                >
-                  <option selected>+91</option>
-                </select>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="phone2"
-                  placeholder="Phone number"
-                />
-              </div>
+  <div class="d-flex flex-column flex-md-row align-items-start mb-2">
+    <input type="text" class="form-control me-2 w-md-full" id="name2" placeholder="Passenger Name" style="max-width: 220px" />
+    <div class="d-flex">
+    <select class="form-select me-2 country-code-select" id="code2" style="max-width: 120px">
+      <option selected>+91</option>
+      <option>+1</option>
+      <option>+44</option>
+    </select>
+    <input type="number" class="form-control w-md-full" id="phone2" maxlength="10" oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10)" placeholder="Phone number" style="max-width: 200px" />
+    </div>
+  </div>
 
-              <div class="d-flex mb-2">
-                <select
-                  class="form-select me-2 country-code-select"
-                  id="code3"
-                  style="max-width: 180px"
-                >
-                  <option selected>+91</option>
-                </select>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="phone3"
-                  placeholder="Phone number"
-                />
-              </div>
 
-              <div class="d-flex mb-2">
-                <select
-                  class="form-select me-2 country-code-select"
-                  id="code4"
-                  style="max-width: 180px"
-                >
-                  <option selected>+91</option>
-                </select>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="phone4"
-                  placeholder="Phone number"
-                />
-              </div>
+  <div class="d-flex align-items-start mb-2 flex-column flex-md-row">
+    <input type="text" class="form-control me-2 w-md-full" id="name3" placeholder="Passenger Name" style="max-width: 220px" />
+    <div class="d-flex">
+    <select class="form-select me-2 country-code-select" id="code3" style="max-width: 120px">
+      <option selected>+91</option>
+      <option>+1</option>
+      <option>+44</option>
+    </select>
+    <input type="number" class="form-control w-md-full" id="phone3" maxlength="10" oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10)" placeholder="Phone number" style="max-width: 200px" />
+    </div>
+  </div>
 
-              <div class="d-flex mb-2">
-                <select
-                  class="form-select me-2 country-code-select"
-                  id="code5"
-                  style="max-width: 180px"
-                >
-                  <option selected>+91</option>
-                </select>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="phone5"
-                  placeholder="Phone number"
-                />
-              </div>
-            </div>
-            <input
+  <div class="d-flex align-items-start mb-2 flex-column flex-md-row">
+    <input type="text" class="form-control me-2 w-md-full" id="name4" placeholder="Passenger Name" style="max-width: 220px" />
+    <div class="d-flex">
+    <select class="form-select me-2 country-code-select" id="code4" style="max-width: 120px">
+      <option selected>+91</option>
+      <option>+1</option>
+      <option>+44</option>
+    </select>
+    <input type="number" class="form-control w-md-full" id="phone4" maxlength="10" oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10)" placeholder="Phone number" style="max-width: 200px" />
+    </div>
+  </div>
+
+  <div class="d-flex align-items-start mb-2 flex-column flex-md-row">
+    <input type="text" class="form-control me-2 w-md-full" id="name5" placeholder="Passenger Name" style="max-width: 220px" />
+    <div class="d-flex">
+    <select class="form-select me-2 country-code-select" id="code5" style="max-width: 120px">
+      <option selected>+91</option>
+      <option>+1</option>
+      <option>+44</option>
+    </select>
+    <input type="number" class="form-control w-md-full" id="phone5" maxlength="10" oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10)" placeholder="Phone number" style="max-width: 200px" />
+    </div>
+  </div>
+  <input
               type="email"
               placeholder="Enter your email to get details"
-              class="form-control mb-2 email-input"
-              style="margin-left: 10px; width: 97%"
+              class="form-control email-input w-md-full-input"
+              style=" margin-left: 10px; width: 550px"
               id="email"
               required
             />
+</div>
+
+<style>
+    @media (max-width: 768px) {
+  .w-md-full-input {
+    width: 330px !important;
+  }
+}
+   </style>
+
+            
 
             <p style="margin-top: 3.5rem">
               <small
@@ -571,6 +564,7 @@
               <div>
                 <label class="form-label mt-3">CHOOSE BOARDING TIME</label>
                 <select class="form-select" id="boardingTime">
+                  <option disabled selected >Choose Boarding Time</option>
                   <option>06:00 AM</option>
                   <option>07:00 AM</option>
                   <option>08:00 AM</option>
@@ -579,6 +573,7 @@
               <div>
                 <label class="form-label mt-3">CHOOSE DROP TERMINAL</label>
                 <select class="form-select" id="dropTerminal">
+                  <option disabled selected>Choose Drop Terminal</option>
                   <option>(IGI) T1</option>
                   <option>(IGI) T2</option>
                   <option>(IGI) T3</option>
@@ -1694,9 +1689,9 @@
               return alert("❌ Order creation failed. Please try again.");
 
             const razorpayOptions = {
-              key: "rzp_live_BpcGlfN8iAkE2P",
+              key: "rzp_live_GguLSrEps04lrr",
               amount: orderData.amount,
-              currency: "INR",
+              currency: "USD",
               order_id: orderData.id,
               name: "GoToGo Airport Shuttle Service",
               description: "Service Booking Payment",
