@@ -549,28 +549,6 @@
       </div>
     </div>
 
-    <!-- <script>
-  document.addEventListener("DOMContentLoaded", function () {
-  const data = JSON.parse(localStorage.getItem("bookingDetails"));
-  if (!data) return;
-
-  // ✅ Show all passenger names in <ul id="passengerList">
-  const passengerList = document.getElementById("passengerList");
-  if (passengerList && Array.isArray(data.names)) {
-    passengerList.innerHTML = ""; // clear any old content
-    data.names.forEach(name => {
-      if (name.trim()) {
-        const li = document.createElement("li");
-        li.textContent = name.trim();
-        passengerList.appendChild(li);
-      }
-    });
-  } else {
-    console.warn("🚫 passengerList not found or names missing");
-  }
-});
-
-</script> -->
 
     <script>
       async function generatePDF() {
