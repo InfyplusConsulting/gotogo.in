@@ -60,7 +60,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <style>
-      
+      body {
+        font-family: "Lora", serif;
+        line-height: 1.7;
+        color: #333;
+        background: #f4f4f4;
+      }
       /* .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -108,12 +113,12 @@
       .list-group-item {
         border: none;
       }
-      /* .footer {
+      .footer {
         background: #333;
         color: white;
         text-align: center;
         padding: 20px 0;
-      } */
+      }
       @media (max-width: 768px) {
         .hero {
           height: 300px;
@@ -211,8 +216,6 @@
   </head>
   <body>
     <!-- Header -->
-
-<!-- Header -->
     <nav class="navbar navbar-expand-lg" style="background: #f4be30 !important">
       <div class="container nav-adjustment">
         <img
@@ -258,8 +261,6 @@
         </div>
       </div>
     </nav>
-
-
 
     <!-- ✅ Global Notification Container -->
     <div
@@ -350,6 +351,7 @@
         </div>
       </div>
 
+      <!-- Booking Form Section -->
       <!-- Booking Form Section -->
       <div class="highlight-bar">Fill the form below</div>
       <form class="row py-5" id="bookingForm">
@@ -776,8 +778,7 @@
       </button>
     </div>
 
-
-<!-- footer <nav></nav> -->
+    <!-- footer <nav></nav> -->
     <nav
       class="footer-navbar navbar-expand-lg"
       style="background: black !important; padding: 20px 0"
@@ -1076,81 +1077,85 @@
       </style>
     </nav>
 
-<style>
-            /* Responsive Design */
-        @media (max-width: 992px) {
-          .footer-container {
-            flex-direction: column;
-            text-align: center;
-            padding: 20px;
-          }
+    <!-- Sedan Modal -->
+    <div
+      id="sedanModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 30%;
+        left: 20%;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+      "
+    >
+      <p>❌ Maximum 3 passengers allowed in Sedan.</p>
+      <p>
+        📞 Please call our assistance at <b>7065650650</b> for customized
+        bookings.
+      </p>
+      <a href="tel:7065650650">
+        <button
+          style="
+            background: #004aad;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+          "
+        >
+          Call Now
+        </button>
+      </a>
+      <button
+        onclick="document.getElementById('sedanModal').style.display='none'"
+        style="margin-left: 10px"
+      >
+        Close
+      </button>
+    </div>
 
-          .footer-links {
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-          }
-
-          .footer-link {
-            font-size: 12px;
-          }
-
-          .footer-logo img {
-            width: 100px;
-            height: auto;
-          }
-
-          .footer-text p {
-            font-size: 12px;
-          }
-
-          .social-icons a img {
-            width: 25px;
-            height: 25px;
-          }
-
-          .footer-contact {
-            text-align: center;
-          }
-        }
-
-        /* Smaller Screens */
-        @media (max-width: 576px) {
-          .footer-links {
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-          }
-          .gap2-5 {
-            gap: 2.5rem !important;
-          }
-
-          .footer-link {
-            font-size: 12px;
-          }
-
-          .footer-logo img {
-            width: 90px;
-          }
-
-          .footer-text p {
-            font-size: 10px;
-          }
-
-          .social-icons a img {
-            width: 22px;
-            height: 22px;
-          }
-
-          .footer-contact a {
-            font-size: 14px;
-          }
-
-          .footer-contact i {
-            font-size: 16px;
-          }
-        }
-</style>
+    <!-- SUV Modal -->
+    <div
+      id="suvModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 30%;
+        left: 20%;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+      "
+    >
+      <p>❌ Maximum 5 passengers allowed in SUV.</p>
+      <p>
+        📞 Please contact our assistance at <b>7065650650</b> for larger
+        bookings.
+      </p>
+      <a href="tel:7065650650">
+        <button
+          style="
+            background: #004aad;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+          "
+        >
+          Call Now
+        </button>
+      </a>
+      <button
+        onclick="document.getElementById('suvModal').style.display='none'"
+        style="margin-left: 10px"
+      >
+        Close
+      </button>
+    </div>
 
     <!-- iski script  -->
     <script>
@@ -1206,64 +1211,42 @@
     <!-- The date input example: -->
     <!-- <input type="date" id="pickupDate" /> -->
 
-    
-
-    <!-- country code  -->
-    
-
-    <!-- date  -->
+    <!-- location searchEnabled -->
     <script>
-      
-    </script>
+      const pickupLocations = [
+        "Courtyard By Marriott Gurugram Downtown, Sector Road Plot No - 27 B, B Block, Sushant Lok - 1, Sector 27, Gurugram (Gurgaon) 122002 India",
+        "The Bristol Hotel, Sector 28, DLF Phase 1 Near Sikanderpur Metro Station, Gurugram (Gurgaon) 122002 India",
+        "Regenta Suites Gurugram, Element One Mall, Sector 49 Sohna Road, Gurugram (Gurgaon) 122018 India",
+        "Sunday Hotels And Residences, M3M Broadway, Golf Course Ext Rd, Sector 71, Gurgaon, 122004 India",
+        "Radisson Hotel Gurugram Udyog Vihar, Adjacent To Plot No. 406, Nh-8 Phase 3, Udyog Vihar, Gurugram (Gurgaon) 122016 India",
+        "Taj City Centre Gurugram, Plot No.1, Sector 44, Gurugram (Gurgaon) 122004 India",
+        "DoubleTree by Hilton Gurugram Baani Square, Baani Square Sector 50, Gurugram (Gurgaon) 122002 India",
+        "DoubleTree by Hilton Gurgaon-New Delhi NCR, Golf Course Road Sector 56, Gurugram (Gurgaon) 122011 India",
+        "Radisson Blu Hotel, New Delhi Dwarka, Plot 4, Dwarka City Centre, Sector 13 Sector 13, Dwarka, New Delhi 110075 India",
+        "Radisson Hotel Gurugram Sohna Road City Center, Main Sohna Road Sector 49, Gurugram (Gurgaon) 122018 India",
+        "Radisson Hotel Sector 29 Gurugram, Plot No. 360-362 Sector 29, Gurugram (Gurgaon) 122001 India",
+        "Crowne Plaza Gurgaon, an IHG hotel, Site No.2 Sector 29 Opposite Signature Tower, Gurugram (Gurgaon) 122001 India",
+        "The Pllazio Hotel, 292 - 296, Sector 29, Gurugram (Gurgaon) 122001 India",
+        "Pride Plaza Hotel Aerocity New Delhi, 5 - A Hospitality District Aerocity, New Delhi 110037 India",
+        "Ibis Gurgaon Golf Course Road, Golf Course Rd Block 1 Sector 53, Gurugram (Gurgaon) 122002 India",
+        "Anya Hotel, Gurgaon, 42 Golf Course Road DLF Phase V, Gurugram (Gurgaon) 122002 India",
+        "Nemesia City Center - Gurugram, Plot No. 358 & 359 City Center, Gurugram (Gurgaon) 122001 India",
+      ];
 
-    <!-- button logic  -->
-    
+      const pickupSelect = document.getElementById("pickupLocation");
 
-    <!-- notification script  -->
-    <script>
-      
-    </script>
-
-    <script>
-
-      // document.addEventListener("DOMContentLoaded", () => {
-
-    </script>
-
-    <!-- jQuery (Required by Select2) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Select2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-    <!-- Choices.js Script -->
-    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/4097fc1260.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    
-    <script>
-      $(document).ready(function () {
-        $("#pickupLocation").select2({
-          placeholder: "Choose Pickup Location",
-          allowClear: true,
-        });
+      pickupLocations.forEach((location) => {
+        const option = document.createElement("option");
+        option.textContent = location;
+        option.value = location;
+        pickupSelect.appendChild(option);
       });
     </script>
 
+    <!-- country code  -->
     <script>
-  // Wait for the entire page to be ready
-  document.addEventListener("DOMContentLoaded", () => {
-    // --- SETUP & INITIALIZATION ---
-
-    // Initialize Choices.js for country codes
-    const countryCodeSelects = document.querySelectorAll(".country-code-select");
-          const countries = [
+      const countries = [
+        { name: "Default", code: "ISD Code" },
         { name: "United States", code: "+1" },
         { name: "Albania", code: "+355" },
         { name: "Algeria", code: "+213" },
@@ -1511,143 +1494,66 @@
         { name: "Zambia", code: "+260" },
         { name: "Zimbabwe", code: "+263" },
       ];
+      function populateWithSearchableDropdowns() {
+        const selects = document.querySelectorAll(".country-code-select");
 
+        selects.forEach((select, index) => {
+          // Clear existing options
+          select.innerHTML = "";
 
-    countryCodeSelects.forEach((select) => {
-      select.innerHTML = ""; // Clear existing options
-      const placeholder = document.createElement("option");
-      placeholder.value = "";
-      placeholder.textContent = "ISD Code";
-      placeholder.disabled = true;
-      placeholder.selected = true;
-      select.appendChild(placeholder);
-      countries.forEach(({ code, name }) => {
-        const option = document.createElement("option");
-        option.value = code;
-        option.textContent = `${name} (${code})`;
-        select.appendChild(option);
-      });
-      new Choices(select, {
-        searchEnabled: true,
-        itemSelectText: "",
-        shouldSort: false,
-        placeholder: true,
-        callbackOnCreateTemplates: function (template) {
-            return {
-                item: (classNames, data) => {
-                    if (data.placeholder) { return template(`<div class="${classNames.item} ${classNames.item}choices__placeholder">${data.label}</div>`); }
-                    return template(`<div class="${classNames.item} ${data.highlighted ? classNames.highlightedState : classNames.itemSelectable}" data-item data-id="${data.id}" data-value="${data.value}">${data.value}</div>`);
-                },
-            };
-        },
-      });
-    });
+          countries.forEach(({ code, name }) => {
+            const option = document.createElement("option");
+            option.value = code;
+            option.textContent = `${name} (${code})`;
 
-    // Populate and initialize Select2 for pickup locations
-    const pickupSelect = document.getElementById("pickupLocation");
-          const pickupLocations = [
-        "Courtyard By Marriott Gurugram Downtown, Sector Road Plot No - 27 B, B Block, Sushant Lok - 1, Sector 27, Gurugram (Gurgaon) 122002 India",
-        "The Bristol Hotel, Sector 28, DLF Phase 1 Near Sikanderpur Metro Station, Gurugram (Gurgaon) 122002 India",
-        "Regenta Suites Gurugram, Element One Mall, Sector 49 Sohna Road, Gurugram (Gurgaon) 122018 India",
-        "Sunday Hotels And Residences, M3M Broadway, Golf Course Ext Rd, Sector 71, Gurgaon, 122004 India",
-        "Radisson Hotel Gurugram Udyog Vihar, Adjacent To Plot No. 406, Nh-8 Phase 3, Udyog Vihar, Gurugram (Gurgaon) 122016 India",
-        "Taj City Centre Gurugram, Plot No.1, Sector 44, Gurugram (Gurgaon) 122004 India",
-        "DoubleTree by Hilton Gurugram Baani Square, Baani Square Sector 50, Gurugram (Gurgaon) 122002 India",
-        "DoubleTree by Hilton Gurgaon-New Delhi NCR, Golf Course Road Sector 56, Gurugram (Gurgaon) 122011 India",
-        "Radisson Blu Hotel, New Delhi Dwarka, Plot 4, Dwarka City Centre, Sector 13 Sector 13, Dwarka, New Delhi 110075 India",
-        "Radisson Hotel Gurugram Sohna Road City Center, Main Sohna Road Sector 49, Gurugram (Gurgaon) 122018 India",
-        "Radisson Hotel Sector 29 Gurugram, Plot No. 360-362 Sector 29, Gurugram (Gurgaon) 122001 India",
-        "Crowne Plaza Gurgaon, an IHG hotel, Site No.2 Sector 29 Opposite Signature Tower, Gurugram (Gurgaon) 122001 India",
-        "The Pllazio Hotel, 292 - 296, Sector 29, Gurugram (Gurgaon) 122001 India",
-        "Pride Plaza Hotel Aerocity New Delhi, 5 - A Hospitality District Aerocity, New Delhi 110037 India",
-        "Ibis Gurgaon Golf Course Road, Golf Course Rd Block 1 Sector 53, Gurugram (Gurgaon) 122002 India",
-        "Anya Hotel, Gurgaon, 42 Golf Course Road DLF Phase V, Gurugram (Gurgaon) 122002 India",
-        "Nemesia City Center - Gurugram, Plot No. 358 & 359 City Center, Gurugram (Gurgaon) 122001 India",
-      ];
+            if (code === "ISD Code") {
+              option.selected = false;
+            }
 
-    pickupLocations.forEach((location) => {
-      const option = new Option(location, location); // A cleaner way to create options
-      pickupSelect.appendChild(option);
-    });
-    $("#pickupLocation").select2({
-      placeholder: "Choose Pickup Location",
-      allowClear: true,
-    });
+            select.appendChild(option);
+          });
 
-    // --- FORM VALIDATION LOGIC ---
-    const submitBtn = document.getElementById("submitBooking");
-    const payBtnText = document.getElementById("payBtnText");
-
-    function validateFormFields() {
-      const email = document.getElementById("email")?.value.trim();
-      const pickupDate = document.getElementById("pickupDate")?.value;
-      const pickupLocation = $("#pickupLocation").val()?.trim(); // Get value from Select2
-      const isValidPickup = !!pickupLocation; // Use the reliable check
-      const boardingTime = document.getElementById("boardingTime")?.value;
-      const terminal = document.getElementById("dropTerminal")?.value.trim();
-      const serviceType = document.querySelector('input[name="serviceType"]:checked')?.value;
-
-      let missingFieldMsg = "";
-      let validPassenger = false;
-      let missingCountryCode = false, missingPhone = false, missingName = false;
-
-      for (let i = 1; i <= 5; i++) {
-        const name = document.getElementById(`name${i}`)?.value.trim();
-        const phone = document.getElementById(`phone${i}`)?.value.trim();
-        const code = document.getElementById(`code${i}`)?.value.trim();
-        if (name || phone || code) {
-          if (!name) missingName = true;
-          if (!phone) missingPhone = true;
-          if (!code) missingCountryCode = true;
-          if (name && phone && code) validPassenger = true;
-        }
+          // Check to avoid double initialization
+          if (!select.classList.contains("choices-initialized")) {
+            new Choices(select, {
+              searchEnabled: true,
+              itemSelectText: "",
+              shouldSort: false,
+              placeholder: "ISD CODE",
+              callbackOnCreateTemplates: function (template) {
+                return {
+                  item: (classNames, data) => {
+                    return template(`
+                  <div class="${classNames.item} ${
+                      data.highlighted
+                        ? classNames.highlightedState
+                        : classNames.itemSelectable
+                    }"
+                       data-item data-id="${data.id}" data-value="${data.value}"
+                       ${data.active ? 'aria-selected="true"' : ""}
+                       ${data.disabled ? 'aria-disabled="true"' : ""}>
+                    ${data.value}
+                  </div>
+                `);
+                  },
+                };
+              },
+            });
+            select.classList.add("choices-initialized");
+          }
+        });
       }
 
-      // Validation checks in order of priority
-      if (missingCountryCode) missingFieldMsg = "Please select the country code";
-      else if (missingName) missingFieldMsg = "Please enter the passenger name";
-      else if (missingPhone) missingFieldMsg = "Please enter the phone number";
-      else if (!validPassenger) missingFieldMsg = "Please fill at least one passenger's details";
-      else if (!email || !email.includes("@")) missingFieldMsg = "Please enter a valid email";
-      else if (!pickupDate) missingFieldMsg = "Please select a pickup date";
-      else if (!isValidPickup) missingFieldMsg = "Please select a pickup location";
-      else if (!boardingTime || boardingTime === "Choose Boarding Time") missingFieldMsg = "Please select a boarding time";
-      else if (!terminal) missingFieldMsg = "Please select a drop terminal";
-      else if (!serviceType) missingFieldMsg = "Please select a service type";
+      
+      // Wait for full DOM before initializing
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(populateWithSearchableDropdowns, 100);
+      });
+    </script>
 
-      const allValid = !missingFieldMsg;
-      submitBtn.disabled = !allValid;
-      payBtnText.textContent = allValid ? "Pay Now" : missingFieldMsg;
-    }
-
-    // --- ATTACH EVENT LISTENERS ---
-    const allFields = [
-      "email", "pickupDate", "boardingTime", "dropTerminal",
-      "name1", "phone1", "code1", "name2", "phone2", "code2",
-      "name3", "phone3", "code3", "name4", "phone4", "code4",
-      "name5", "phone5", "code5",
-    ];
-    allFields.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.addEventListener("input", validateFormFields);
-        el.addEventListener("change", validateFormFields);
-      }
-    });
-
-    // Special listener for Select2
-    $("#pickupLocation").on("change", validateFormFields);
-
-    document.querySelectorAll('input[name="serviceType"]').forEach(radio => {
-      radio.addEventListener("change", validateFormFields);
-    });
-
-    // Initial check on page load
-    validateFormFields();
-
-    // --- OTHER PAGE SCRIPTS (like your date logic, modals, etc.) ---
-    // You can paste the rest of your page-specific functions here.
-    const pickupDateInput = document.getElementById("pickupDate");
+    <!-- date  -->
+    <script>
+      const pickupDateInput = document.getElementById("pickupDate");
 
       const now = new Date();
       const ninePM = new Date();
@@ -1670,9 +1576,134 @@
       minDate = `${yyyy}-${mm}-${dd}`;
 
       pickupDateInput.setAttribute("min", minDate);
-  });
+    </script>
 
-  function showToast(message = "Something happened!", duration = 4000) {
+    <!-- button logic  -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const submitBtn = document.getElementById("submitBooking");
+        const payBtnText = document.getElementById("payBtnText");
+
+        function validateFormFields() {
+          const email = document.getElementById("email")?.value.trim();
+          const pickupDate = document.getElementById("pickupDate")?.value;
+          const pickupLocation = document
+            .getElementById("pickupLocation")
+            ?.value.trim();
+          const isValidPickup =
+            pickupLocation && pickupLocation !== "Choose Pickup Location";
+
+          const boardingTime = document.getElementById("boardingTime")?.value;
+          const terminal = document
+            .getElementById("dropTerminal")
+            ?.value.trim();
+          const serviceType = document.querySelector(
+            'input[name="serviceType"]:checked'
+          )?.value;
+
+          let validName = false;
+          let validPhone = false;
+
+          for (let i = 1; i <= 5; i++) {
+            const name = document.getElementById(`name${i}`)?.value.trim();
+            const phone = document.getElementById(`phone${i}`)?.value.trim();
+            if (name && phone) {
+              validName = true;
+              validPhone = true;
+              break;
+            }
+          }
+
+          const allValid =
+            validName &&
+            validPhone &&
+            email?.includes("@") &&
+            pickupDate &&
+            isValidPickup &&
+            boardingTime &&
+            terminal &&
+            serviceType;
+
+          submitBtn.disabled = !allValid;
+          payBtnText.textContent = allValid
+            ? "Pay Now"
+            : "Please fill all the fields";
+        }
+
+        // Attach listeners to relevant fields
+        const fieldIds = [
+          "email",
+          "pickupDate",
+          "pickupLocation",
+          "boardingTime",
+          "dropTerminal",
+        ];
+
+        fieldIds.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.addEventListener("input", validateFormFields);
+            el.addEventListener("change", validateFormFields);
+          }
+        });
+
+        for (let i = 1; i <= 5; i++) {
+          const nameEl = document.getElementById(`name${i}`);
+          const phoneEl = document.getElementById(`phone${i}`);
+          if (nameEl) nameEl.addEventListener("input", validateFormFields);
+          if (phoneEl) phoneEl.addEventListener("input", validateFormFields);
+        }
+
+        document
+          .querySelectorAll('input[name="serviceType"]')
+          .forEach((radio) => {
+            radio.addEventListener("change", validateFormFields);
+          });
+
+        validateFormFields(); // Initial check
+      });
+
+      // ✅ Toast Notification Function
+      function showToast(message) {
+        const toast = document.createElement("div");
+        toast.style.cssText = `
+      position: fixed; top: 20px; right: 20px;
+      background: #0c52a2; color: white;
+      padding: 12px 20px; border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 9999;
+    `;
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 4000);
+      }
+
+      // ✅ Ticket Link Logic for ticket page
+      document.addEventListener("DOMContentLoaded", () => {
+        const data = JSON.parse(localStorage.getItem("bookingDetails"));
+        if (data) {
+          const createdAt = new Date().getTime();
+          localStorage.setItem("localStorageExpiry", createdAt);
+
+          const linkDiv = document.getElementById("downloadTicketLink");
+          if (linkDiv) {
+            const now = new Date().getTime();
+            const expiry =
+              parseInt(localStorage.getItem("localStorageExpiry")) +
+              4 * 60 * 60 * 1000;
+            if (now < expiry) {
+              linkDiv.innerHTML = `
+            <a href="your-ticket.html" class="btn btn-primary mt-3">Download Your Ticket</a>
+            <p class="text-muted small">Ticket will expire after 4 hours</p>`;
+            }
+          }
+        }
+      });
+    </script>
+
+    <!-- notification script  -->
+    <script>
+      function showToast(message = "Something happened!", duration = 4000) {
         const toast = document.getElementById("globalNotification");
         if (!toast) return;
 
@@ -1688,8 +1719,10 @@
           toast.style.display = "none";
         }, duration);
       }
+    </script>
 
-          // ✅ Global bookingData variable (MUST be outside)
+    <script>
+      // ✅ Global bookingData variable (MUST be outside)
       let bookingData = {};
 
       function generateTicketNumber() {
@@ -1743,24 +1776,7 @@
         }
       }
 
-      
-            // This function will run as soon as the page is ready.
-    const pingServer = async () => {
-        try {
-            // IMPORTANT: Replace this URL with your actual deployed Onrender server URL
-            await fetch('https://paymentgatewayforgotogo.onrender.com/ping');
-            console.log('Ping sent to server to wake it up.');
-        } catch (error) {
-            // We don't show an alert here because it's a background task.
-            // If it fails, the user doesn't need to be interrupted.
-            console.error('Failed to ping server:', error);
-        }
-    };
-
-     // Call the function to wake up the server.
-    pingServer();
-
-
+      document.addEventListener("DOMContentLoaded", () => {
         const bookingForm = document.getElementById("bookingForm");
 
         for (let i = 1; i <= 5; i++) {
@@ -1801,7 +1817,6 @@
             const name = document.getElementById(`name${i}`).value.trim();
             const code = document.getElementById(`code${i}`).value.trim();
             const phone = document.getElementById(`phone${i}`).value.trim();
-            
             if (name) names.push(name);
             if (phone) phones.push(`  ${code} ${phone}`);
           }
@@ -1863,7 +1878,7 @@
 
           try {
             const orderRes = await fetch(
-              "https://paymentgatewayforgotogo.onrender.com/api/create-order",
+              "http://localhost:5000/api/create-order",
               {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -1876,13 +1891,12 @@
               return alert("❌ Order creation failed. Please try again.");
 
             const razorpayOptions = {
-              key: "rzp_live_GguLSrEps04lrr",  // change rzp_test_7m2jpATTXnOo2o  rzp_live_GguLSrEps04lrr
+              key: "rzp_test_7m2jpATTXnOo2o",  // change rzp_test_7m2jpATTXnOo2o  rzp_live_GguLSrEps04lrr
               amount: orderData.amount,
               currency: "INR",  // change USD
               order_id: orderData.id,
               name: "GoToGo Airport Shuttle Service",
               description: "Service Booking Payment",
-              image: './assets/gotogo final logos/g2g fleet.png',
               handler: async function (response) {
 
                 const firstName = names[0] || "User";
@@ -1902,7 +1916,7 @@
 
                 try {
                   const verifyRes = await fetch(
-                    "https://paymentgatewayforgotogo.onrender.com/verify",
+                    "http://localhost:5000/verify",
                     {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
@@ -1963,8 +1977,7 @@
                   showToast(
                     "✅ We Will sent a mail to your email. Have a happy journey!"
                   );
-                  // / Clear all form fields
-  document.getElementById("bookingForm").reset();
+
                   setTimeout(() => {
                     window.location.href = "your-ticket.html";
                   }, 2000);
@@ -1980,17 +1993,7 @@
                 name: names[0],
                 contact: phones[0],
               },
-              theme: {
-                    color: '#f4be30'
-                },
-               modal: {
-              ondismiss: function() {
-            console.log("❌ Payment modal closed by user.");
-            // Re-enable the button and restore its text
-            payBtn.disabled = false;
-            payBtn.innerHTML = "Pay Now"; // Or whatever your original button text was
-            alert("Payment was cancelled. You can try again.");
-            }}
+              theme: { color: "#0c52a2" },
             };
 
             const rzp = new Razorpay(razorpayOptions);
@@ -2010,9 +2013,32 @@
             alert("❌ Something went wrong during payment process.");
           }
         });
-    
-    
+      });
+    </script>
 
-</script>
+    <!-- jQuery (Required by Select2) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- Choices.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4097fc1260.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#pickupLocation").select2({
+          placeholder: "Choose Pickup Location",
+          allowClear: true,
+        });
+      });
+    </script>
   </body>
 </html>
