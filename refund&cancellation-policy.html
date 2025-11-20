@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GoToGo – Refund &amp; Cancellation Policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fafcff;
+      color: #212529;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f4be30;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px #aaa;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .logo img {
+      height: 80px;
+      cursor: pointer;
+    }
+    nav .back-btn {
+      font-size: 16px;
+      color: white;
+      text-decoration: none;
+      background: #000;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    nav .back-btn:hover {
+      background: #f4be30;
+      color: #000;
+    }
+    main {
+      max-width: 90%;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #eee;
+      padding: 36px 28px;
+      box-sizing: border-box;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 24px;
+    }
+    h2 {
+      color: #2184ee;
+      margin-top: 36px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    ul ul {
+      margin-left: 20px;
+      list-style-type: disc;
+    }
+    section {
+      margin-bottom: 22px;
+    }
+    .brand {
+      text-align: center;
+      margin: 38px 0 0 0;
+      font-size: 1.1em;
+      color: #444;
+      letter-spacing: 1px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #0a3381;
+    }
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+      }
+      nav .logo img {
+        height: 50px;
+        margin-bottom: 8px;
+      }
+      nav .back-btn {
+        font-size: 14px;
+        padding: 6px 12px;
+      }
+      main {
+        max-width: 95%;
+        margin: 15px auto;
+        padding: 24px 16px;
+      }
+      h1 {
+        font-size: 1.5em;
+        margin-bottom: 16px;
+      }
+      h2 {
+        margin-top: 24px;
+      }
+      ul {
+        margin-left: 15px;
+        font-size: 14px;
+      }
+      ul ul {
+        margin-left: 15px;
+      }
+      .brand {
+        font-size: 1em;
+        margin: 24px 0 0 0;
+      }
+    }
+    @media (max-width: 375px) {
+      nav {
+        padding: 8px;
+      }
+      nav .logo img {
+        height: 40px;
+      }
+      nav .back-btn {
+        font-size: 12px;
+        padding: 5px 10px;
+      }
+      main {
+        padding: 20px 8px;
+      }
+      h1 {
+        font-size: 1.2em;
+      }
+      ul {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="./assets/g2g fleet.png" alt="GoToGo Logo" onclick="window.location.href='/'" />
+    </div>
+    <a class="back-btn" onclick="window.history.back()">Back to Previous Page</a>
+  </nav>
+  <main>
+    <h1>GoToGo – Refund &amp; Cancellation Policy</h1>
+
+    <section>
+      <h2 class="highlight">1. Booking Confirmation</h2>
+      <p>A booking is considered confirmed once payment is successfully received and a booking ID is issued.</p>
+    </section>
+
+    <section>
+      <h2 class="highlight">2. Cancellation Policy (Airport Shuttle / Fleet / Intercity / Shuttle to Agra)</h2>
+      <ul>
+        <li><strong>a) Airport Shuttle Service (Gurgaon → Delhi Airport)</strong>
+          <ul>
+            <li>Non-refundable once the booking is confirmed.</li>
+            <li>No refund for no-show or late arrival beyond the scheduled departure.</li>
+            <li>If GoToGo cancels due to operational issues, a 100% refund or reschedule option will be offered.</li>
+          </ul>
+        </li>
+        <li><strong>b) Fleet Service (Local Travel / Corporate Travel)</strong>
+          <ul>
+            <li>Cancellation before 24 hours: Full refund</li>
+            <li>Cancellation within 24 hours: 50% charge</li>
+            <li>Cancellation within 6 hours: 100% charge</li>
+          </ul>
+        </li>
+        <li><strong>c) Intercity Travel</strong>
+          <ul>
+            <li>Cancellation before 48 hours: Full refund</li>
+            <li>24–48 hours: 50% refund</li>
+            <li>Less than 24 hours: No refund</li>
+          </ul>
+        </li>
+        <li><strong>d) Shuttle to Agra – Same Day Tour</strong>
+          <ul>
+            <li>Booking is non-refundable due to pre-scheduled vehicle & itinerary arrangements.</li>
+            <li>Rescheduling is allowed 24 hours prior (subject to availability).</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="highlight">3. Delays &amp; Rescheduling</h2>
+      <p>If delays or cancellations occur due to:</p>
+      <ul>
+        <li>Natural calamities</li>
+        <li>Strikes</li>
+        <li>Political unrest</li>
+        <li>Roadblocks</li>
+        <li>Government restrictions</li>
+      </ul>
+      <p>GoToGo will offer: Complimentary rescheduling OR Refund after deducting irreversible expenses (if any)</p>
+    </section>
+
+    <section>
+      <h2 class="highlight">4. Refund Timeline</h2>
+      <p>Approved refunds will be processed within 7–14 business days, depending on the bank/payment provider.</p>
+    </section>
+
+    <section>
+      <h2 class="highlight">5. Contact for Refund Queries</h2>
+      <p>
+        📞 +91 7065 650 650<br />
+        📧 <a href="mailto:care@gotogotravelsolutions.com">care@gotogotravelsolutions.com</a>
+      </p>
+    </section>
+  </main>
+  <div class="brand">
+    <strong style="font-style: italic;">GoToGo — Fairness. Transparency. Customer Care.</strong><br />
+    Our commitment to clear and compassionate refund policies for every traveler.
+    <p class="mb-0 text-white">
+      © 2025 All Rights Reserved by GoToGo Travel Solutions LLP
+    </p>
+  </div>
+</body>
+</html>

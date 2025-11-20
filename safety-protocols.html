@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GoToGo – Safety Protocols</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fafcff;
+      color: #212529;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f4be30;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px #aaa;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .logo img {
+      height: 80px;
+      cursor: pointer;
+    }
+    nav .back-btn {
+      font-size: 16px;
+      color: white;
+      text-decoration: none;
+      background: #000;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    nav .back-btn:hover {
+      background: #f4be30;
+      color: #000;
+    }
+    main {
+      max-width: 90%;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #eee;
+      padding: 36px 28px;
+      box-sizing: border-box;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 24px;
+    }
+    h2 {
+      color: #2184ee;
+      margin-top: 36px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    ul ul {
+      margin-left: 20px;
+      list-style-type: disc;
+    }
+    section {
+      margin-bottom: 22px;
+    }
+    .brand {
+      text-align: center;
+      margin: 38px 0 0 0;
+      font-size: 1.1em;
+      color: #444;
+      letter-spacing: 1px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #0a3381;
+    }
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+      }
+      nav .logo img {
+        height: 50px;
+        margin-bottom: 8px;
+      }
+      nav .back-btn {
+        font-size: 14px;
+        padding: 6px 12px;
+      }
+      main {
+        max-width: 95%;
+        margin: 15px auto;
+        padding: 24px 16px;
+      }
+      h1 {
+        font-size: 1.5em;
+        margin-bottom: 16px;
+      }
+      h2 {
+        margin-top: 24px;
+      }
+      ul {
+        margin-left: 15px;
+        font-size: 14px;
+      }
+      ul ul {
+        margin-left: 15px;
+      }
+      .brand {
+        font-size: 1em;
+        margin: 24px 0 0 0;
+      }
+    }
+    @media (max-width: 375px) {
+      nav {
+        padding: 8px;
+      }
+      nav .logo img {
+        height: 40px;
+      }
+      nav .back-btn {
+        font-size: 12px;
+        padding: 5px 10px;
+      }
+      main {
+        padding: 20px 8px;
+      }
+      h1 {
+        font-size: 1.2em;
+      }
+      ul {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="./assets/g2g fleet.png" alt="GoToGo Logo" onclick="window.location.href='/'" />
+    </div>
+    <a class="back-btn" onclick="window.history.back()">Back to Previous Page</a>
+  </nav>
+  <main>
+    <h1>GoToGo – Safety Protocols</h1>
+    <section>
+      <p><strong>Your Safety Is Our Highest Priority.</strong> At GoToGo, every ride is built on trust, care, and uncompromised safety.</p>
+    </section>
+
+    <section>
+      <h2 class="highlight">1. Professional Chauffeurs</h2>
+      <ul>
+        <li>Trained in defensive & safe driving</li>
+        <li>Background verified</li>
+        <li>Uniformed and courteous</li>
+        <li>Familiar with NCR routes and emergency protocols</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="highlight">2. Sanitized &amp; Well-Maintained Fleet</h2>
+      <ul>
+        <li>Daily interior & exterior cleaning</li>
+        <li>Regular vehicle health checks</li>
+        <li>Air-conditioning & seat hygiene ensured</li>
+        <li>No-compromise safety standards</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="highlight">3. GPS-Enabled Tracking</h2>
+      <ul>
+        <li>All vehicles have real-time GPS tracking</li>
+        <li>Live monitoring for safety & punctuality</li>
+        <li>Route optimization for faster, safer journeys</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="highlight">4. Seatbelt Safety</h2>
+      <ul>
+        <li>Mandatory seatbelt policy for all passengers</li>
+        <li>Child safety seating available on request</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="highlight">5. Support &amp; Emergency Assistance</h2>
+      <ul>
+        <li>Round-the-clock customer support</li>
+        <li>Immediate assistance in case of delays or emergencies</li>
+        <li>Continuous communication with driver teams</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="highlight">6. Secure Digital Payments</h2>
+      <ul>
+        <li>Encrypted transactions</li>
+        <li>OTP-based verification</li>
+        <li>Multiple payment options</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="highlight">7. In-Ride Safety Features</h2>
+      <ul>
+        <li>Verified drivers</li>
+        <li>SOS support</li>
+        <li>Dash cameras (select fleet)</li>
+        <li>Strict no-smoking, no-alcohol policy</li>
+      </ul>
+    </section>
+
+    <section>
+      <p><strong>GoToGo – Safe. Reliable. Professional.</strong><br/>
+      Every journey matters — and your safety matters most.</p>
+    </section>
+  </main>
+  <div class="brand">
+    <strong style="font-style: italic;">GoToGo — Your Safety, Our Commitment.</strong><br />
+    Ensuring confidence and care for every traveler.
+    <p class="mb-0 text-white">
+      © 2025 All Rights Reserved by GoToGo Travel Solutions LLP
+    </p>
+  </div>
+</body>
+</html>
