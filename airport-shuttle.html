@@ -1746,7 +1746,7 @@
     const pingServer = async () => {
         try {
             // IMPORTANT: Replace this URL with your actual deployed Onrender server URL
-            await fetch('https://paymentgatewayforgotogo.onrender.com/ping');
+            await fetch('https://paymentgatewayforairportshuttle.onrender.com/ping');
             console.log('Ping sent to server to wake it up.');
         } catch (error) {
             // We don't show an alert here because it's a background task.
@@ -1861,7 +1861,7 @@
 
           try {
             const orderRes = await fetch(
-              "https://paymentgatewayforgotogo.onrender.com/api/create-order",
+              "https://paymentgatewayforairportshuttle.onrender.com/api/create-order",
               {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -1874,7 +1874,7 @@
               return alert("❌ Order creation failed. Please try again.");
 
             const razorpayOptions = {
-              key: "rzp_test_7m2jpATTXnOo2o",  // change rzp_test_7m2jpATTXnOo2o  rzp_live_GguLSrEps04lrr
+              key: "rzp_live_GguLSrEps04lrr",  // change rzp_test_7m2jpATTXnOo2o  rzp_live_GguLSrEps04lrr
               amount: orderData.amount,
               currency: "INR",  // change USD
               order_id: orderData.id,
@@ -1900,7 +1900,7 @@
 
                 try {
                   const verifyRes = await fetch(
-                    "https://paymentgatewayforgotogo.onrender.com/verify",
+                    "https://paymentgatewayforairportshuttle.onrender.com/verify",
                     {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
